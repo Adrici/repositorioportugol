@@ -1,41 +1,47 @@
 programa
 {
-	inclua biblioteca Util --> util
 	/*
-	 * Leia uma matriz 6 x 6, conte e escreva quantos valores maiores que 10 ela possui.
+	 * 5.Leia uma matriz 6 x 6, conte e escreva quantos valores maiores que 10 ela possui./
 	 */
+       inclua biblioteca Util
+	
 	funcao inicio()
-	{
-		inteiro matriz[6][6], x, l, c, quantMaiorDez=0
-		
-		x= util.sorteia(0, 6)
-
-		
-		para(l=0;l<6; l++)
-			{ 
-				para(c=0; c<6; c++)
-				{
-					matriz[l][c] = x
-					escreva(matriz[l][c]) 
-
-					escreva("[",l,"][",c,"] | ")					
-					se(matriz[l][c]>10)
-					{
-						quantMaiorDez=quantMaiorDez +1 
-					}
-				}
-				
-			}
- 			escreva("\nQuantidade de números maiores que dez: ", quantMaiorDez) 
-		
-	}
+       {
+       const inteiro LINHA = 6
+       const inteiro COLUNA = 6
+        inteiro matriz[LINHA][COLUNA];
+        inteiro l,c,contador=0, contadorM=0
+	  para(l=0; l<LINHA; l++)
+	  {
+	  	para(c=0; c<COLUNA; c++)
+	  	{
+	  	 	matriz[l][c]= Util.sorteia(0,99)
+	  	 	escreva(matriz[l][c])
+	  	 	escreva(" ")
+           	se (matriz[l][c]>10)
+           	{
+           		contador= contador+1
+           	}
+           	senao se (matriz[l][c]<10){
+           		contadorM= contadorM+1
+           	}
+       	 }
+	  	 escreva("\n")
+	  }
+	
+        escreva("\n Existem na matriz, " , contador, " números maiores que 10.");
+        escreva("\n Existem na matriz, " , contadorM, " números menores que 10.");
+           	
+	
+	  	
+	  }
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 234; 
+ * @POSICAO-CURSOR = 103; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
